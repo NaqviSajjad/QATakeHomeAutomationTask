@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Allure output
+allure-results/
+allure-report/
+
+# Cypress runtime output
+cypress/screenshots/
+cypress/downloads/
+cypress/videos/
+
+# Presentation files
+*.pdf
+*.pptx
+*.ppt
+
+# OS
+.DS_Store
