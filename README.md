@@ -177,3 +177,11 @@ New user registrations use a randomly generated username (via Faker.js plus a ti
 - The purchase flow is tested as a guest user only. A logged-in purchase flow is not currently covered.
 
 For a full breakdown of risks and scope, see [TEST_PLAN.md](./TEST_PLAN.md).
+
+---
+
+## AI Tool Disclosure
+
+I used Claude and ChatGPT as a coding assistant during this project. It helped me integrate Allure reporting and understand its configuration, troubleshoot timeout and flaky-test issues in the login and purchase tests, and refactor the page objects for readability. I also used it to draft the README, test plan and presentation, and to review my test approach for gaps.
+
+The test design, the choice of what to cover, and the final decisions were mine. I reviewed every suggestion before applying it, adapted it to the project, and ran the full suite to confirm it works before submitting.
