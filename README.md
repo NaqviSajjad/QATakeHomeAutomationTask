@@ -25,7 +25,7 @@ If you see a version number, you are good to go. If not, install it from the lin
 
 ```bash
 git clone <repository-url>
-cd demoblaze-cypress
+
 ```
 
 ### 2. Install dependencies and the recommended Cypress version
