@@ -7,6 +7,7 @@ describe('Demoblaze Laptop Purchase', () => {
   });
 
   it('TC08 — Verify the end to end flow of laptop purchase for an unregistered user', () => {
+    HomePage.openLaptops();
     HomePage.selectLaptop('Sony vaio i7');
     HomePage.addToCart();
 

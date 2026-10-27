@@ -23,7 +23,6 @@ describe('Demoblaze Login', () => {
   it('TC05 — Verify that user can successfully login with valid credentials', () => {
     const { username, password } = getRegisteredUser();
 
-    // HomePage.openLogin();
     LoginPage.login(username, password);
     Navbar.assertLoggedInAs(username);
   });

@@ -28,15 +28,28 @@ git clone <repository-url>
 cd demoblaze-cypress
 ```
 
-### 2. Install dependencies
+### 2. Install dependencies and the recommended Cypress version
 
-This installs Cypress and all other required packages:
+This project is built and verified with **Cypress 15.1.0**. Newer versions may behave differently, so install this exact version.
 
 ```bash
 npm install
+npm install --save-dev --save-exact cypress@15.1.0
 ```
 
-The first time you run this it may take a minute or two. Cypress downloads its own browser binary as part of installation.
+The first install can take a minute or two because Cypress downloads its own binary.
+
+Confirm the version:
+
+```bash
+npx cypress --version
+```
+
+You should see `Cypress package version: 15.1.0`. If the binary is missing or out of date, run:
+
+```bash
+npx cypress install --force
+```
 
 ### 3. Create the environment file
 
@@ -57,23 +70,31 @@ Replace the values with a username and password you have already registered on [
 
 ## Running the Tests
 
-### Headless mode (recommended for a quick run)
+Cypress runs in Electron by default. Chrome works too if it is installed on your machine.
 
-This runs all tests in the background without opening a browser window. Results are printed in the terminal.
+### Headless runs
 
 ```bash
-npm run cy:run
+npm run cy:run                      # Electron (default)
+npx cypress run --browser chrome    # Chrome
+npx cypress run --browser electron  # Electron, explicit
 ```
 
-### Interactive mode (recommended when writing or debugging tests)
-
-This opens the Cypress application where you can watch tests run in a real browser, inspect each step, and see exactly what is happening on screen.
+### Interactive mode (Cypress app)
 
 ```bash
 npm run cy:open
 ```
 
-Once the Cypress app opens, select **E2E Testing**, choose a browser, and click on any spec file to run it.
+Select **E2E Testing**, pick **Chrome** or **Electron** in the browser list, then click a spec to run it. Use this when writing or debugging tests.
+
+> Chrome only shows up in the list if Cypress detects it on your machine. Check with `npx cypress info`.
+
+To run a single spec:
+
+```bash
+npx cypress run --spec cypress/tests/e2e/login.cy.js --browser chrome
+```
 
 ---
 

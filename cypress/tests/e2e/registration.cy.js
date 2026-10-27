@@ -58,7 +58,6 @@ describe('Demoblaze Registration', () => {
 
       SignupPage.register(username, password);
 
-      // Verified: partial registration data is rejected in each invalid combination.
     });
   });
 });
